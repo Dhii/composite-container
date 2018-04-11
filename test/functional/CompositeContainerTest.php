@@ -1,9 +1,8 @@
 <?php
 
-namespace Dhii\Di\FuncTest;
+namespace Dhii\Data\Container\FuncTest;
 
-use Dhii\Di\CompositeContainer as TestSubject;
-use Dhii\Cache\ContainerInterface as CacheContainerInterface;
+use Dhii\Data\Container\CompositeContainer as TestSubject;
 use Psr\Container\ContainerInterface as BaseContainerInterface;
 use Xpmock\TestCase;
 use Exception as RootException;
@@ -22,7 +21,7 @@ class CompositeContainerTest extends TestCase
      *
      * @since [*next-version*]
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\Di\CompositeContainer';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\Data\Container\CompositeContainer';
 
     /**
      * Creates a new instance of the test subject.
@@ -152,22 +151,6 @@ class CompositeContainerTest extends TestCase
     {
         $mock = $this->getMockBuilder('MyCallable')
             ->setMethods(['__invoke'])
-            ->getMock();
-
-        return $mock;
-    }
-
-    /**
-     * Creates a new cache container.
-     *
-     * @since [*next-version*]
-     *
-     * @return MockObject|CacheContainerInterface The new cache container.
-     */
-    public function createCacheContainer()
-    {
-        $mock = $this->getMockBuilder('Dhii\Cache\MemoryMemoizer')
-            ->setMethods(null)
             ->getMock();
 
         return $mock;
