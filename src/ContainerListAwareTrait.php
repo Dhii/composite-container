@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Di;
+namespace Dhii\Data\Container;
 
 use ArrayAccess;
 use InvalidArgumentException;
