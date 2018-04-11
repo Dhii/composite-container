@@ -1,9 +1,8 @@
 <?php
 
-namespace Dhii\Di\FuncTest;
+namespace Dhii\Data\Container\FuncTest;
 
-use Dhii\Di\ContainerListAwareTrait as TestSubject;
-
+use Dhii\Data\Container\ContainerListAwareTrait as TestSubject;
 use Xpmock\TestCase;
 use Exception as RootException;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
@@ -21,7 +20,7 @@ class ContainerListAwareTraitTest extends TestCase
      *
      * @since [*next-version*]
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\Di\ContainerListAwareTrait';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\Data\Container\ContainerListAwareTrait';
 
     /**
      * Creates a new instance of the test subject.
@@ -162,7 +161,7 @@ class ContainerListAwareTraitTest extends TestCase
      *
      * @since [*next-version*]
      */
-    public function testSetGetContainers()
+    public function testSetGetContainerList()
     {
         $list = [
             [uniqid('key') => uniqid('val')],
@@ -181,5 +180,19 @@ class ContainerListAwareTraitTest extends TestCase
 
         $result = $_subject->_getContainerList();
         $this->assertEquals($list, $result, 'Wrong container list retrieved');
+    }
+
+    /**
+     * Tests that `_getContainerList()` works as expected by default.
+     *
+     * @since [*next-version*]
+     */
+    public function testGetContainerListDefault()
+    {
+        $subject = $this->createInstance();
+        $_subject = $this->reflect($subject);
+
+        $result = $_subject->_getContainerList();
+        $this->assertEquals([], $result, 'Wrong default container list retrieved');
     }
 }
