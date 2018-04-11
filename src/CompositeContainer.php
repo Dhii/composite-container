@@ -1,16 +1,8 @@
 <?php
 
-namespace Dhii\Di;
+namespace Dhii\Data\Container;
 
 use ArrayAccess;
-use Dhii\Data\Container\ContainerGetCapableTrait;
-use Dhii\Data\Container\ContainerHasCapableTrait;
-use Dhii\Data\Container\ContainerInterface;
-use Dhii\Data\Container\ContainerListGetCapableTrait;
-use Dhii\Data\Container\ContainerListHasCapableTrait;
-use Dhii\Data\Container\CreateContainerExceptionCapableTrait;
-use Dhii\Data\Container\CreateNotFoundExceptionCapableTrait;
-use Dhii\Data\Container\NormalizeKeyCapableTrait;
 use Dhii\Exception\CreateInvalidArgumentExceptionCapableTrait;
 use Dhii\Exception\CreateOutOfRangeExceptionCapableTrait;
 use Dhii\I18n\StringTranslatingTrait;
